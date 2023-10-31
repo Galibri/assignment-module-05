@@ -20,12 +20,23 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
+                        <li><a href="admin_dashboard.php" class="nav-link px-2 text-white">Dashboard</a></li>
+                    <?php } elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'manager') { ?>
+                        <li><a href="manager_dashboard.php" class="nav-link px-2 text-white">Dashboard</a></li>
+                    <?php } elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'user') { ?>
+                        <li><a href="user_dashboard.php" class="nav-link px-2 text-white">Dashboard</a></li>
+                    <?php } ?>
                 </ul>
 
                 <div class="text-end">
-                    <a href="login.php" type="button" class="btn btn-outline-light me-2">Login</a>
-                    <a href="register.php" type="button" class="btn btn-warning">Sign-up</a>
+                    <?php if (!isset($_SESSION['username'])) { ?>
+                        <a href="login.php" type="button" class="btn btn-outline-light me-2">Login</a>
+                        <a href="register.php" type="button" class="btn btn-warning">Sign-up</a>
+                    <?php } ?>
+                    <?php if (isset($_SESSION['username'])) { ?>
+                        <a href="logout.php" type="button" class="btn btn-warning">Logout</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

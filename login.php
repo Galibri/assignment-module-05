@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     foreach ($users as $user) {
         list($uname, $uemail, $upassword, $urole) = explode(',', $user);
         if ($uemail == $email && $upassword == $password) {
-            $_SESSION['usernmae'] = $uname;
+            $_SESSION['username'] = $uname;
             $_SESSION['email'] = $uemail;
             $_SESSION['role'] = $urole;
 
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
             <form action="login.php" method="post">
                 Email: <input type="email" name="email" required><br>
                 Password: <input type="password" name="password" required><br>
-                <input type="submit" value="Login">
+                <input type="submit" name="submit" value="Login">
             </form>
             <p class="text-danger">
                 <?php echo $errMsg; ?>

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <h3>Hello,
-                <?php echo $_SESSION['usernmae'] ?? ''; ?>
+                <?php echo $_SESSION['username'] ?? ''; ?>
             </h3>
         </div>
     </div>

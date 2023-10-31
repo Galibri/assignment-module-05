@@ -1,11 +1,9 @@
+<?php include_once './templates/header.php'; ?>
 <?php
-
 if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     header("Location: index.php");
 }
 ?>
-
-<?php include_once './templates/header.php'; ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
