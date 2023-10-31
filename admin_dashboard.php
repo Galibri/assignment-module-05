@@ -1,6 +1,10 @@
 <?php include_once './templates/header.php'; ?>
-
-<div class="container">
+<?php
+if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
+    header("Location: index.php");
+}
+?>
+<div class="container py-3">
     <div class="row">
         <div class="col-md-12">
             <h3>Hello,

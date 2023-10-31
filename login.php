@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-<div class="container">
+<div class="container py-3">
     <div class="row">
         <div class="col-md-12">
             <form action="login.php" method="post">

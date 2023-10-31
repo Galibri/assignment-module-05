@@ -4,7 +4,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     header("Location: index.php");
 }
 ?>
-<div class="container">
+<div class="container py-3">
     <div class="row">
         <div class="col-md-12">
             <h2>Create User Role</h2>
